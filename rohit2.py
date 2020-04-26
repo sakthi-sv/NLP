@@ -1,0 +1,15 @@
+from tkinter import *
+
+file=open(r'C:\Users\boomr\OneDrive\Desktop\nlp\nlp.csv','r')
+o=file.read()
+file.close()
+root = Tk()
+root.title("Simplified Report")
+S = Scrollbar(root)
+T = Text(root, height=35, width=80)
+S.pack(side=RIGHT, fill=Y)
+T.pack(side=LEFT, fill=Y)
+S.config(command=T.yview)
+T.config(yscrollcommand=S.set)
+T.insert(END, o)
+mainloop(  )
